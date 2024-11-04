@@ -46,31 +46,51 @@
     color: #ff6600; 
 }
 
-/* Home Image Section */
 .homeImage {
     height: 100vh;
-    background-image: url('utlis/home2.jpg');
+    background-image: url('utlis/home3.jpg');
     background-size: 100vw auto; 
     background-repeat: no-repeat; 
     background-position: center center; 
 }
+
+.orderFreshFood {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 15vh; 
+}
+
+.orderFreshFood h1 {
+    font-weight: bold;
+    text-align: center; 
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #555;
+}
+
 .products {
     margin-left: 20%;
     margin-right: 20%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem; 
+    gap: 4rem; 
     padding: 2rem;
     background-color: #fff; 
 }
+
 .product-card {
     position: relative;
-    background-color: #fff; /* White background for the card */
+    background-color: #fff; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     text-align: center;
-    overflow: hidden; 
+    overflow: visible; 
+    z-index: 2; 
+    display: flex; 
+    flex-direction: column;
+    height: 100%;
 }
 
 .product-card::before {
@@ -87,41 +107,81 @@
 }
 
 .product-card img {
-    width: 100%; 
-    border-radius: 8px;
-    position: relative; 
-    z-index: 2;
-}
-
-.product-card h3,
-.product-card p,
-.product-card button,
-.rating {
-    position: relative; 
-    z-index: 2;
+    width: calc(100% + 40px); 
+    height: auto;
+    max-height: 200px; 
+    border-radius: 8px 8px 0 0; 
+    position: absolute;
+    top: -5px; 
+    left: -20px; 
+    z-index: 3; 
+    /* object-fit: cover; */
 }
 
 .product-card h3 {
-    margin: 1rem 0 0.5rem;
+    text-align: left;
+    margin: 1rem 0 0.5rem; 
     font-size: 1.2rem;
+    padding-top: 160px; 
+    z-index: 2; 
+    position: relative;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center; 
+    margin-top: 0.5rem;
+    position: relative; 
+    z-index: 2; 
+    margin-bottom: auto; 
+}
+.product-price {
+    z-index: 2;
+    font-weight: 1000; 
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .product-card p {
     font-size: 0.9rem;
-    color: #555; /* Text color */
+    color: #000000; 
+    margin: 0; 
+    z-index: 2; 
+}
+
+.product-description {
+    text-align: left;
+    color: #555;
+}
+.button-rating-container {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: auto; 
+    width: 100%; 
+    align-items: center;
 }
 
 .product-card button {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
+    margin: 0; 
+    padding: 0.5rem 1rem; 
+    width: 70%; 
+    max-width: 150px; 
     background-color: #ff6600; 
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    position: relative; 
+    z-index: 2; 
 }
 
 .rating {
+    margin-top: 2px;
+    text-align: right; 
     margin-top: 0.5rem;
     color: #ffc107; 
+    position: relative; 
+    z-index: 2; 
 }
